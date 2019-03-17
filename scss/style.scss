@@ -1,0 +1,36 @@
+
+$mdWidth: 768px;
+$lgWidth: 1200px;
+
+.row{
+	.margin-bottom: 15px;
+	&::after{
+	clear:both;
+	display:block;
+	content:'';
+	}
+}
+
+
+.col{
+	float:left;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+$columns: 12;
+$columWidth: 100% / $columns;
+
+@for $i from 1 through $columns{
+	.col#{$i}{
+	width: $columWidth * $i
+	}
+}
+
+@for $i from 1 through $columns{
+	.offset#{$i}{
+	margin-left: $columWidth * $i
+	}
+}
+
+
